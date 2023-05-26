@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: 'IRANSansX-Medium';
+  src: url("assets/fonts/IRANSansX-Medium.woff");
+}
+@font-face {
+  font-family: 'IRANSansX-Regular';
+  src: url("assets/fonts/IRANSansX-Regular.woff");
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
