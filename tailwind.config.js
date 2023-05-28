@@ -1,21 +1,21 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    colors:{
-      first : '#0A2647',
-      second :'#144272',
-      third :'#205295',
-      fourth :'#2C74B3',
-    },
+    // colors:{
+    //   first_color : '#0A2647',
+    //   second_color :'#144272',
+    //   third_color :'#205295',
+    //   fourth_color :'#2C74B3',
+    // },
     fontFamily: {
-      'IRANSansX-Medium': ['IRANSansX-Medium', 'sans-serif'],
-      'IRANSansX-Regular': ['IRANSansX-Regular', 'sans-serif']
+      IRANSansX_Medium: 'IRANSansX-Medium',
+      IRANSansX_Regular: 'IRANSansX-Regular'
+    },
+    container: {
+      center: true,
     },
     extend: {},
   },
-  plugins: [],
 }
-
