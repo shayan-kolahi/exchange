@@ -6,7 +6,8 @@ import {SignInComponent} from "./sign-in/sign-in.component";
 const routes: Routes = [
   {path: "", redirectTo: 'sign-in', pathMatch: 'full'},
   {path: "sign-in",component: SignInComponent,title: "ورود | صرافی ارز دیجیتال"},
-  {path: "sign-up",component: SignUpComponent,title: "ثبت نام | صرافی ارز دیجیتال"}
+  {path: "sign-up",component: SignUpComponent,title: "ثبت نام | صرافی ارز دیجیتال"},
+  {path: "forgot-password",component: SignUpComponent,title: "فراموشی کلمه عبور1234567890- | صرافی ارز دیجیتال"}
 ];
 
 @NgModule({

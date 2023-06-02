@@ -3,12 +3,6 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    // colors:{
-    //   first_color : '#0A2647',
-    //   second_color :'#144272',
-    //   third_color :'#205295',
-    //   fourth_color :'#2C74B3',
-    // },
     fontFamily: {
       IRANSansX_Medium: 'IRANSansX-Medium',
       IRANSansX_Regular: 'IRANSansX-Regular'
@@ -16,6 +10,14 @@ module.exports = {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      colors: {
+        primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a"},
+          first_color : '#0A2647',
+          second_color :'#144272',
+          third_color :'#205295',
+          fourth_color :'#2C74B3',
+      }
+    },
   },
 }

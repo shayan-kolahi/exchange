@@ -6,18 +6,18 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 
 import {InputTextModule} from 'primeng/inputtext';
-import {ButtonModule} from 'primeng/button';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
     SignUpComponent,
-    SignInComponent
+    SignInComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
     AuthRoutingModule,
     InputTextModule,
-    ButtonModule,
   ]
 })
 export class AuthModule { }
