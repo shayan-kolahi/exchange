@@ -11,6 +11,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 
 import {ToastModule} from 'primeng/toast';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {ToastModule} from 'primeng/toast';
     AuthRoutingModule,
     InputTextModule,
     ToastModule,
-    RecaptchaV3Module
+    RecaptchaV3Module,
+    FormsModule
   ],
   providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LeOMmofAAAAAJKCNHACNO_zd_M-aRCDsCFTt5uU" }],
 })
