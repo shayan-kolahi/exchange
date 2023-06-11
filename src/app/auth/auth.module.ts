@@ -8,6 +8,8 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import {InputTextModule} from 'primeng/inputtext';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
+import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
+
 @NgModule({
   declarations: [
     SignUpComponent,
@@ -18,6 +20,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     CommonModule,
     AuthRoutingModule,
     InputTextModule,
-  ]
+    RecaptchaV3Module
+  ],
+  providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LeOMmofAAAAAJKCNHACNO_zd_M-aRCDsCFTt5uU" }],
 })
 export class AuthModule { }
