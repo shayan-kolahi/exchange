@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --hmr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -19,7 +19,8 @@
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
     "ng-recaptcha": "^10.0.0",
-    "primeicons": "^6.0.1",
+    "ngx-otp-input": "^0.11.4",
+    "primeicons": "^5.0.0",
     "primeng": "^14.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

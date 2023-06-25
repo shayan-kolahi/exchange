@@ -12,6 +12,8 @@ import { RECAPTCHA_V3_SITE_KEY, RecaptchaV3Module } from "ng-recaptcha";
 
 import {ToastModule} from 'primeng/toast';
 import {FormsModule} from "@angular/forms";
+import {MessageService} from "primeng/api";
+import {NgxOtpInputModule} from "ngx-otp-input";
 
 @NgModule({
   declarations: [
@@ -25,8 +27,9 @@ import {FormsModule} from "@angular/forms";
     InputTextModule,
     ToastModule,
     RecaptchaV3Module,
-    FormsModule
+    FormsModule,
+    NgxOtpInputModule
   ],
-  providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LeOMmofAAAAAJKCNHACNO_zd_M-aRCDsCFTt5uU" }],
+  providers: [{ provide: RECAPTCHA_V3_SITE_KEY, useValue: "6LeOMmofAAAAAJKCNHACNO_zd_M-aRCDsCFTt5uU" },MessageService],
 })
 export class AuthModule { }

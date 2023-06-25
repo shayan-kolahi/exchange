@@ -1,29 +1,68 @@
 <section class="flex flex-col justify-center py-20 w-full items-center">
   <div class="w-full border bg-white rounded-lg shadow sm:max-w-md">
     <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-      <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">شماره موبایل خود را وارد کنید</h1>
-      <div class="space-y-4 md:space-y-6">
-        <div>
-          <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">شماره موبایل</label>
-          <input type="tel"
-                 name="email"
-                 id="number"
-                 class="input input-bordered w-full focus:outline-0"
-                 placeholder="09123456789">
+      <ng-container *ngIf="levels === 'firstStage'">
+        <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">شماره موبایل خود را وارد کنید</h2>
+        <div class="space-y-4 md:space-y-6">
+          <div>
+            <label for="mobile" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">شماره موبایل</label>
+            <input type="tel"
+                   [(ngModel)]="mobile"
+                   (keydown)="keydown($event)"
+                   (keyup)="keyup()"
+                   name="mobile"
+                   id="mobile"
+                   class="input input-bordered w-full focus:outline-0"
+                   placeholder="09123456789">
+          </div>
+          <button type="submit"
+                  (click)="signUpBtn()"
+                  [disabled]="isDisable"
+                  class="btn btn-info w-full">
+            <span *ngIf="loading" class="loading loading-spinner"></span>
+            <span *ngIf="!loading">بعدی</span>
+          </button>
+          <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+            قبلا ثبت نام کرده اید؟
+            <a routerLink="/auth/sign-in"
+               class="font-medium text-primary-600 hover:underline dark:text-primary-500">
+              ورود به حساب کاربری
+            </a>
+          </p>
         </div>
-        <button type="submit"
-                disabled
-                class="btn btn-info w-full">
-          بعدی
-        </button>
-        <p class="text-sm font-light text-gray-500 dark:text-gray-400">
-          قبلا ثبت نام کرده اید؟
-          <a routerLink="/auth/sign-in"
-             class="font-medium text-primary-600 hover:underline dark:text-primary-500">
-            ورود به حساب کاربری
-          </a>
-        </p>
-      </div>
+      </ng-container>
+      <ng-container *ngIf="levels === 'secondStage'">
+        <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">کد تایید</h2>
+        <div class="space-y-4 md:space-y-6">
+          <div>
+            <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"> کد ارسال شده به شماره {{this.mobile}}</label>
+            <div class="direction_ltr flex justify-center items-center">
+              <ngx-otp-input [config]="otpInputConfig" (fill)="handleFillEvent($event)"></ngx-otp-input>
+            </div>
+          </div>
+          <button type="submit"
+                  (click)="signUpBtn()"
+                  [disabled]="isDisable"
+                  class="btn btn-info w-full">
+            <span *ngIf="loading" class="loading loading-spinner"></span>
+            <span *ngIf="!loading">بعدی</span>
+          </button>
+          <button (click)="edit_mobile()"
+             class="text-sm font-medium text-primary-600 hover:underline dark:text-primary-500">
+             ویرایش شماره موبایل
+          </button>
+          <p class="text-sm font-light text-gray-500 dark:text-gray-400">
+            قبلا ثبت نام کرده اید؟
+            <a routerLink="/auth/sign-in"
+               class="font-medium text-primary-600 hover:underline dark:text-primary-500">
+              ورود به حساب کاربری
+            </a>
+          </p>
+        </div>
+      </ng-container>
+      <ng-container *ngIf="levels === 'thirdStage'"></ng-container>
+      <ng-container *ngIf="levels === 'fourthStage'"></ng-container>
     </div>
   </div>
 </section>
+<p-toast></p-toast>
