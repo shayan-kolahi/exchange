@@ -20,6 +20,9 @@ export class ApiService {
   signUpSecond(code:string,tracking_id:string,mobile:string){
     return this.http.post<any>( environment.baseUrl+'auth/register/verify/otp/', { code : code , tracking_id : tracking_id , mobile : mobile })
   }
+  signUpThird(national_id:string,birth_date:string,tracking_id:string,mobile:string){
+    return this.http.post<any>( environment.baseUrl+'auth/register/complete/', { national_id : national_id , birth_date : birth_date , tracking_id : tracking_id , mobile : mobile })
+  }
   // sign-up
 
 

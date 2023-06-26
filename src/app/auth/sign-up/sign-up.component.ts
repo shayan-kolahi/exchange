@@ -35,16 +35,18 @@ export class SignUpComponent implements OnInit {
       inputError: 'my-super-error-class',
     },
   };
-  handleFillEvent(value: string): void {
-    console.log(value);
+  handleFillEvent(code: string): void {
+    console.log(code);
     console.log(this._api.signUpFirst_mobile);
     console.log(this._api.signUpFirst_token);
     this.isDisable = true;
     this.loading = true;
-    this._api.signUpSecond(value , this._api.signUpFirst_token , this._api.signUpFirst_mobile).subscribe({
+    this._api.signUpSecond(code , this._api.signUpFirst_token , this._api.signUpFirst_mobile).subscribe({
       next:data => {
         console.log('data' , data);
+        this._api.signUpFirst_token = data.message.token
         this.loading = false;
+        this.levels = 'thirdStage'
       },
       error:err => {
         console.log('err' , err);
