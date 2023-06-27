@@ -20,7 +20,7 @@ export class SignUpComponent implements OnInit {
   mobile:string = "";
   isDisable:boolean = true;
   loading:boolean = false;
-  levels:string = "firstStage";
+  levels:string = "thirdStage"; // firstStage
 
   otpInputConfig: NgxOtpInputConfig = {
     otpLength: 6,
