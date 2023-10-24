@@ -4,8 +4,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      IRANSansX_Medium: 'IRANSansX-Medium',
-      IRANSansX_Regular: 'IRANSansX-Regular'
+      font_family: 'IRANSansWeb',
+      font_family_Bold: 'IRANSansFaNum-Bold'
     },
     container: {
       center: true,
@@ -15,10 +15,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        first_color : '#0A2647',
-        second_color :'#144272',
-        third_color :'#205295',
-        fourth_color :'#2C74B3',
+        mainColor: '#23b4e7',
+        secondColor: '#0478a1',
       }
     },
   },

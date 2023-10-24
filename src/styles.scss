@@ -2,14 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'IRANSansX-Medium';
-  src: url("assets/fonts/IRANSansX-Medium.woff");
-}
-@font-face {
-  font-family: 'IRANSansX-Regular';
-  src: url("assets/fonts/IRANSansX-Regular.woff");
-}
+@import "./assets/scss/fonts";
+@import "./assets/scss/variables";
 
 .direction_ltr{
   direction: ltr;
@@ -21,11 +15,11 @@
 html , body{
   @apply bg-gray-50;
   min-height: 100vh;
-  font-family: 'IRANSansX-Regular';
+  font-family: $font-family-Bold;
 }
 .p-toast .p-toast-message .p-toast-message-content .p-toast-message-text {
   margin: 0 1rem 0 0;
 }
 .p-toast .p-toast-message .p-toast-message-content{
-  font-family: 'IRANSansX-Regular' !important;
+  font-family: $font-family-Bold !important;
 }
